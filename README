@@ -1,1 +1,16 @@
 just another f-ing website-generator (jafw)
+
+what to do:
+
+- if you want to be competent:
+
+1. `python3 -m venv venv` (on first setup only)
+2. `source venv/bin/activate`
+
+- on first setup
+
+3. `pip install -r requirements.txt`
+
+- to build
+
+4. `python3 jafw_build.py`
