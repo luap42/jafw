@@ -26,7 +26,8 @@ def clear_build_folder():
 
 
 def copy_assets():
-    pass
+    shutil.copytree("./assets", "./build/assets")
+    os.remove('./build/assets/.keep')
 
 
 def make_single_file(fn, file):
