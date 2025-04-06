@@ -21,9 +21,17 @@ def build_pages(path="./pages/", prefix=None):
 
 def make_element_name(elem, prefix):
     fn = os.path.splitext(elem)[0]
+
+    hidden = False
+    if fn.startswith("."):
+        hidden = True
+
     fn = fn.replace("_", "-")
     fn = re.sub('[^a-zA-Z0-9-]', '-', fn)
     fn = re.sub('-+', '-', fn)
+
+    if hidden:
+        fn = "." + fn
 
     if prefix is not None:
         fn = prefix + "/" + fn
