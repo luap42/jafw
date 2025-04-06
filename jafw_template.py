@@ -1,5 +1,6 @@
 import os
 import re
+import datetime
 
 VARIABLE_SUBSTITUTION = re.compile(r'\$([A-za-z_]+)|\$\{(.+?)\}')
 
@@ -30,6 +31,9 @@ def load_var(varname, body, meta):
     
     elif varname == 'Generator':
         return 'jafw'
+    
+    elif varname == 'Year':
+        return str(datetime.datetime.now().year)
 
     else:
         if varname in meta.keys():
