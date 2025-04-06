@@ -3,10 +3,13 @@ import jafw_template
 import shutil
 
 def make_output(files, css):
+    # write pages
     for file in files.items():
         make_single_file(*file)
 
-    pass
+    # write css
+    with open('./build/style.css', 'w') as f:
+        f.write(css)
 
 
 def clear_build_folder():
