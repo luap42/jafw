@@ -26,13 +26,13 @@ def apply_data_to_templa_file(template_file, body, meta):
 
 
 def load_var(varname, body, meta):
-    if varname == 'Body':
+    if varname == 'body':
         return body
     
-    elif varname == 'Generator':
+    elif varname == 'generator':
         return 'jafw'
     
-    elif varname == 'Year':
+    elif varname == 'year':
         return str(datetime.datetime.now().year)
 
     else:
