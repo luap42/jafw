@@ -37,6 +37,6 @@ def load_var(varname, body, meta):
 
     else:
         if varname in meta.keys():
-            return meta[varname]
+            return meta[varname][0]
         
     return f'[not found: {varname}]'
