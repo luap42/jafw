@@ -18,6 +18,5 @@ def clear_build_folder():
             shutil.rmtree(full_path)
 
 
-
 def copy_assets():
     pass
