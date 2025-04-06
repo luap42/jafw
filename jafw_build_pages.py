@@ -11,7 +11,7 @@ def build_pages(path="./pages/", prefix=None):
         elem_name = make_element_name(elem, prefix)
         full_path = os.path.join(path, elem)
 
-        if os.path.isdir(elem):
+        if os.path.isdir(full_path):
             pages.update(build_pages(full_path, prefix=elem_name))
         else:
             pages[elem_name] = build_single_page(full_path)
