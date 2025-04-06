@@ -13,4 +13,4 @@ what to do:
 
 - to build
 
-4. `python3 jafw_build.py`
+4. `python3 jafw.py`
