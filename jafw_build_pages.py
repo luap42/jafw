@@ -25,6 +25,7 @@ def make_element_name(elem, prefix):
     hidden = False
     if fn.startswith("."):
         hidden = True
+        fn = fn[1:]
 
     fn = fn.replace("_", "-")
     fn = re.sub('[^a-zA-Z0-9-]', '-', fn)
