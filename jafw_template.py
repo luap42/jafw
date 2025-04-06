@@ -19,10 +19,11 @@ def get_template_file(fn):
 
 
 def apply_data_to_templa_file(template_file, body, meta):
-    for partial in re.finditer(PARTIAL_SUBSTITUTION, template_file):
-        orig = partial[0]
-        partialname = partial[1]
-        template_file = template_file.replace(orig, load_partial(partialname))
+    while re.findall(PARTIAL_SUBSTITUTION, template_file):
+        for partial in re.finditer(PARTIAL_SUBSTITUTION, template_file):
+            orig = partial[0]
+            partialname = partial[1]
+            template_file = template_file.replace(orig, load_partial(partialname))
 
     for var in re.finditer(GALLERY_SUBSTITUTION, template_file):
         orig = var[0]
