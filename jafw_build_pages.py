@@ -1,6 +1,6 @@
 import os
 import re
-import commonmark
+import markdown
 
 def build_pages(path="./pages/", prefix=None):
     pages = {}
@@ -34,5 +34,6 @@ def build_single_page(full_path):
     with open(full_path) as r:
         md = r.read()
     
-    html = commonmark.commonmark(md)
-    return html
+    mdobj = markdown.Markdown(extensions=['meta', 'extra'])
+    html = mdobj.convert(md)
+    return html, mdobj.Meta

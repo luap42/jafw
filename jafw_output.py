@@ -31,7 +31,7 @@ def copy_assets():
 
 
 def make_single_file(fn, file):
-    file_with_template = jafw_template.render_template(file)
+    file_with_template = jafw_template.render_template(*file)
     full_fn = os.path.join('./build/', *os.path.split(fn)) + '.html'
     os.makedirs(os.path.split(full_fn)[0], exist_ok=True)
 
