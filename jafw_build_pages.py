@@ -36,7 +36,3 @@ def build_single_page(full_path):
     
     html = commonmark.commonmark(md)
     return html
-
-
-def resolve_links(pages):
-    return pages

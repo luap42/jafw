@@ -12,7 +12,6 @@ parser = argparse.ArgumentParser(
 args = parser.parse_args()
 
 files = jafw_build_pages.build_pages()
-files = jafw_build_pages.resolve_links(files)
 css = jafw_css_compressor.build_css()
 
 output = jafw_output.clear_build_folder()
